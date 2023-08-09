@@ -1,39 +1,42 @@
 <template>
   <div class="AsideLeft">
     <h1>Métodos HTTPS</h1>
-    <router-link class="Option" to="/Get" v-slot="{ navigate }"
+    <router-link class="Option" to="/get" v-slot="{ navigate }"
       ><button class="ButtonMenu" @click="navigate">GET</button></router-link
     >
-    <router-link class="Option" to="/Post" v-slot="{ navigate }"
-      ><button class="ButtonMenu" @click="navigate">POST</button></router-link
+    <router-link class="Option" to="/post" v-slot="{ navigate }"
+      ><button class="ButtonMenu" @click="navigate">CRUD</button></router-link
     >
   </div>
 </template>
 <style lang="scss">
-@use "/assets/styles/main.scss" as main;
 .AsideLeft {
-  background: main.$primary;
+  background: $light !important;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px repeat(2, 40px);
   gap: 10px;
   list-style: none;
 }
-.Option,
-.ButtonMenu {
+.Option {
   display: flex;
-  border: none;
   justify-content: center;
   align-items: center;
+}
+.ButtonMenu {
+  border: none;
   border-radius: 10px;
   font-size: medium;
   height: 100%;
+  width: 80%;
   text-decoration: none;
+  color: $dark;
+  background: $text;
+  font-weight: bold;
 }
 .ButtonMenu:hover {
-  background: $secondary;
-  border: 1px solid main.$light; // Aquí usamos la variable $light con el prefijo main.
-  color: map-get($text-gray, 200);
+  background: $dark;
+  color: $text;
   width: 80%;
 }
 </style>
