@@ -21,7 +21,7 @@ export default {
       const clients = await getClients();
       return commit(SET_CLIENTS, clients);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   },
   async update({ state }: any, client: Client) {
